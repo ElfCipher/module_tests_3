@@ -4,16 +4,7 @@
 TEST(SOLVER_TEST, A_EQ_ZERO)
 {
     double a = 0.0;
-    try
-    {
-        auto res = Solver::Solve(a);
-        if(!res.empty())
-            FAIL();
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what() << '\n';
-    }
+    EXPECT_ANY_THROW(Solver::Solve(a));
 }
 
 TEST(SOLVER_TEST, NO_ROOTS)
