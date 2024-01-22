@@ -23,10 +23,12 @@ std::vector<double> Solver::Solve(double a, double b, double c)
     }
     else if(d > 0.0)
     {
-        double tmp = sqrt(d)/(2*a);
-        double root = -b + tmp;
+        double sqrD2a = sqrt(d)/(2*a);
+        double b2a = -b/(2*a);
+        
+        double root = b2a + sqrD2a;
         result.push_back(root);
-        root = -b - tmp;
+        root = b2a - sqrD2a;
         result.push_back(root);
     }
     
